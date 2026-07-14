@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carta multilingüe de Sweet Café: bocadillos, tapas, platos asiáticos y mucho más." />
+  <title>Sweet Café · Carta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="motion.css" />
+  <link rel="stylesheet" href="intro.css" />
+  <link rel="stylesheet" href="languages.css" />
+</head>
+<body>
+  <div class="intro-loader" aria-hidden="true">
+    <div class="intro-panel intro-panel-top"></div><div class="intro-panel intro-panel-bottom"></div>
+    <div class="intro-brand"><span class="intro-cutlery">✦</span><span class="intro-logo">S</span><p>Sweet Café</p><div class="intro-line"></div><small>COCINA · CAFÉ · MOMENTOS</small></div>
+  </div>
+  <header class="hero" id="top">
+    <nav class="nav wrap" aria-label="Navegación principal">
+      <a class="brand" href="#top" aria-label="Sweet Café inicio"><span>S</span> Sweet Café</a>
+      <div class="lang-picker" aria-label="Idioma">
+        <button class="lang-current" id="langToggle" aria-expanded="false"><span id="currentFlag">🇪🇸</span><span id="currentCode">ES</span><span>⌄</span></button>
+        <div class="lang-menu" id="langMenu" role="menu"></div>
+      </div>
+    </nav>
+    <div class="hero-content wrap">
+      <p class="eyebrow" data-i18n="eyebrow">COCINA CASERA · SABOR SIN FRONTERAS</p>
+      <h1 data-i18n="heroTitle">Tu mesa, llena de<br><em>buenos momentos.</em></h1>
+      <p class="intro" data-i18n="heroIntro">Tapas de siempre, bocadillos generosos y especialidades asiáticas hechas al momento.</p>
+      <a href="#carta" class="cta"><span data-i18n="viewMenu">Ver la carta</span><span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div>
+    <div class="hero-art" aria-hidden="true"><span class="food food-dumpling">🥟</span><span class="food food-burger">🍔</span><span class="food food-salad">🥗</span><span class="food food-noodles">🍜</span><i class="steam steam-one"></i><i class="steam steam-two"></i><i class="steam steam-three"></i></div>
+    <span class="spark spark-one" aria-hidden="true">✦</span><span class="spark spark-two" aria-hidden="true">✧</span><span class="spark spark-three" aria-hidden="true">✦</span>
+  </header>
+
+  <main id="carta">
+    <div class="marquee" aria-hidden="true"><div>BOCADILLOS&nbsp; ✦ &nbsp;TAPAS&nbsp; ✦ &nbsp;RAMEN&nbsp; ✦ &nbsp;HAMBURGUESAS&nbsp; ✦ &nbsp;ENSALADAS&nbsp; ✦ &nbsp;HECHO AL MOMENTO&nbsp; ✦ &nbsp;BOCADILLOS&nbsp; ✦ &nbsp;TAPAS&nbsp; ✦ &nbsp;RAMEN&nbsp; ✦ &nbsp;HAMBURGUESAS&nbsp; ✦ &nbsp;ENSALADAS&nbsp; ✦ &nbsp;HECHO AL MOMENTO&nbsp; ✦ &nbsp;</div></div>
+    <div class="menu-floaters" aria-hidden="true">
+      <span class="menu-food mf-one">🥐</span><span class="menu-food mf-two">🍅</span>
+      <span class="menu-food mf-three">🥟</span><span class="menu-food mf-four">🥑</span>
+      <span class="menu-food mf-five">🍤</span><span class="menu-food mf-six">🌶️</span>
+      <span class="menu-food mf-seven">🥪</span><span class="menu-food mf-eight">🍋</span>
+    </div>
+    <section class="menu-head wrap">
+      <div><p class="eyebrow accent" data-i18n="ourMenu">NUESTRA CARTA</p><h2 data-i18n="choose">¿Qué te apetece hoy?</h2></div>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" data-i18n-placeholder="search" placeholder="Buscar un plato…" /></label>
+    </section>
+    <nav class="categories wrap" id="categories" aria-label="Categorías"></nav>
+    <div class="menu-grid wrap" id="menu"></div>
+    <p class="empty wrap" id="empty" hidden data-i18n="noResults">No hemos encontrado ningún plato.</p>
+  </main>
+
+  <section class="allergy">
+    <div class="wrap allergy-inner"><span class="allergy-icon">✦</span><div><h3 data-i18n="allergyTitle">¿Tienes alguna alergia?</h3><p data-i18n="allergyText">Habla con nuestro equipo antes de pedir. Estaremos encantados de ayudarte.</p></div></div>
+  </section>
+  <footer class="footer wrap"><a class="brand dark" href="#top"><span>S</span> Sweet Café</a><p data-i18n="footer">Hecho con cariño · Precios con IVA incluido</p><a href="#top" class="top" data-i18n="backTop">Volver arriba ↑</a></footer>
+  <script src="app.js"></script>
+  <script src="eu-languages.js"></script>
+</body>
+</html>
