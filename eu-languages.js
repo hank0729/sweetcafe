@@ -30,7 +30,7 @@ const euComplete={
  sv:['HEMLAGAT · SMAK UTAN GRÄNSER','Ditt bord, fullt av<br><em>fina stunder.</em>','Klassiska tapas, generösa smörgåsar och nylagade asiatiska specialiteter.','Inga rätter hittades.','Berätta om allergier för personalen innan du beställer. Vi hjälper gärna.','Tillagat med kärlek · Priser inklusive moms','Tillbaka till toppen ↑','Med sallad eller stekt ägg och pommes frites','Med pommes frites och läsk: tillägg 2,90 €']
 };
 Object.entries(euComplete).forEach(([code,v])=>Object.assign(translations[code],{eyebrow:v[0],heroTitle:v[1],heroIntro:v[2],noResults:v[3],allergyText:v[4],footer:v[5],backTop:v[6],withSide:v[7],extra:v[8]}));
-translations.zhs={eyebrow:'家常料理 · 跨越国界的美味',heroTitle:'一桌美食，盛满<br><em>美好时光。</em>',heroIntro:'经典西班牙小食、分量十足的三明治，以及现点现做的亚洲料理。',viewMenu:'查看菜单',ourMenu:'我们的菜单',choose:'今天想吃什么？',search:'搜索菜品…',all:'全部',noResults:'找不到符合的菜品。',allergyTitle:'有食物过敏吗？',allergyText:'点餐前请告知服务人员，我们很乐意为您提供帮助。',footer:'用心制作 · 价格含增值税',backTop:'回到顶部 ↑',withSide:'附沙拉，或太阳蛋与薯条',extra:'加薯条与汽水另加 2.90 €'};
+translations.zhs={eyebrow:'家常料理 · 跨越国界的美味',heroTitle:'一桌美食，盛满<br><em>美好时光。</em>',heroIntro:'经典西班牙小食、分量十足的三明治，以及现点现做的亚洲料理。',viewMenu:'查看菜单',ourMenu:'我们的菜单',choose:'今天想吃什么？',search:'搜索菜品…',all:'全部',noResults:'找不到符合的菜品。',allergyTitle:'过敏原提醒｜你有食物过敏吗？',allergyText:'点餐前请咨询我们的工作人员，并告知任何食物过敏或饮食需求。',footer:'用心制作 · 价格含增值税',backTop:'回到顶部 ↑',withSide:'附沙拉，或太阳蛋与薯条',extra:'加薯条与汽水另加 2.90 €'};
 const categoryTranslations={
  bg:['Сандвичи','Бургери','Тостове','Азиатски ястия','Комбинирани ястия','Салати','Тапас'],hr:['Sendviči u baguetteu','Burgeri','Tost sendviči','Azijska jela','Kombinirana jela','Salate','Tapasi'],cs:['Bagetové sendviče','Burgery','Sendviče','Asijská jídla','Kombinovaná jídla','Saláty','Tapas'],da:['Baguettes','Burgere','Sandwich','Asiatiske retter','Kombinationsretter','Salater','Tapas'],nl:['Belegde baguettes','Burgers','Tosti’s','Aziatische gerechten','Combinatiegerechten','Salades','Tapas'],et:['Baguette-võileivad','Burgerid','Võileivad','Aasia road','Kombineeritud road','Salatid','Tapased'],fi:['Täytetyt patongit','Burgerit','Voileivät','Aasialaiset ruoat','Yhdistelmäannokset','Salaatit','Tapakset'],fr:['Baguettes garnies','Burgers','Sandwichs','Plats asiatiques','Assiettes composées','Salades','Tapas'],de:['Belegte Baguettes','Burger','Sandwiches','Asiatische Gerichte','Kombigerichte','Salate','Tapas'],el:['Μπαγκέτες','Μπέργκερ','Σάντουιτς','Ασιατικά πιάτα','Συνδυαστικά πιάτα','Σαλάτες','Τάπας'],hu:['Bagettszendvicsek','Burgerek','Szendvicsek','Ázsiai ételek','Kombinált tálak','Saláták','Tapasok'],ga:['Baguettes líonta','Borgair','Ceapairí','Miasa Áiseacha','Miasa teaglaim','Sailéid','Tapas'],it:['Panini in baguette','Hamburger','Toast','Piatti asiatici','Piatti combinati','Insalate','Tapas'],lv:['Pildītas bagetes','Burgeri','Sviestmaizes','Āzijas ēdieni','Kombinētie ēdieni','Salāti','Tapas'],lt:['Įdaryti batonai','Mėsainiai','Sumuštiniai','Azijos patiekalai','Kombinuoti patiekalai','Salotos','Tapas'],mt:['Baguettes mimlija','Burgers','Sandwiches','Platti Asjatiċi','Platti kkombinati','Insalati','Tapas'],pl:['Bagietki','Burgery','Kanapki','Dania azjatyckie','Zestawy obiadowe','Sałatki','Tapas'],pt:['Baguetes recheadas','Hambúrgueres','Sanduíches','Pratos asiáticos','Pratos combinados','Saladas','Tapas'],ro:['Baghete umplute','Burgeri','Sandvișuri','Preparate asiatice','Platouri combinate','Salate','Tapas'],sk:['Plnené bagety','Burgery','Sendviče','Ázijské jedlá','Kombinované jedlá','Šaláty','Tapas'],sl:['Polnjene bagete','Burgerji','Sendviči','Azijske jedi','Kombinirani krožniki','Solate','Tapasi'],sv:['Fyllda baguetter','Burgare','Smörgåsar','Asiatiska rätter','Kombinationstallrikar','Sallader','Tapas']
 };
@@ -49,6 +49,23 @@ applyLang=function(code){
 const langMenu=document.querySelector('#langMenu'),langToggle=document.querySelector('#langToggle');
 langMenu.innerHTML=euLanguages.map(([code,flag,name])=>`<button class="lang-option" role="menuitem" data-lang="${code}"><span>${flag}</span><span>${name}</span><small>${code.toUpperCase()}</small></button>`).join('');
 langToggle.onclick=()=>{const open=langMenu.classList.toggle('open');langToggle.setAttribute('aria-expanded',open)};
-langMenu.querySelectorAll('.lang-option').forEach(btn=>btn.onclick=()=>{applyLang(btn.dataset.lang);langMenu.classList.remove('open');langToggle.setAttribute('aria-expanded','false')});
+langMenu.querySelectorAll('.lang-option').forEach(btn=>btn.onclick=()=>{localStorage.setItem('sweet-lang-manual','true');applyLang(btn.dataset.lang);langMenu.classList.remove('open');langToggle.setAttribute('aria-expanded','false')});
 document.addEventListener('click',e=>{if(!e.target.closest('.lang-picker')){langMenu.classList.remove('open');langToggle.setAttribute('aria-expanded','false')}});
-applyLang(localStorage.getItem('sweet-lang')||'es');
+function detectBrowserLanguage(){
+ const supported=new Set(euLanguages.map(item=>item[0]));
+ const locales=navigator.languages?.length?navigator.languages:[navigator.language||'es'];
+ for(const locale of locales){
+  const normalized=locale.toLowerCase().replace('_','-');
+  if(normalized.startsWith('zh')){
+   if(/(^|-)cn|(^|-)sg|hans/.test(normalized))return'zhs';
+   return'zh';
+  }
+  const base=normalized.split('-')[0];
+  if(supported.has(base))return base;
+ }
+ return'es';
+}
+const initialLanguage=localStorage.getItem('sweet-lang-manual')==='true'
+ ?(localStorage.getItem('sweet-lang')||'es')
+ :detectBrowserLanguage();
+applyLang(initialLanguage);
